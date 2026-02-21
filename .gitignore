@@ -1,0 +1,27 @@
+
+# Environment variables
+.env
+.env.local
+
+# Build outputs
+dist/
+build/
+
+# Temporary files
+tmp/
+temp/
+# Dependencies
+# ===============================
+node_modules/
+
+# ===============================
+# Build outputs
+# ===============================
+dist/
+dist-ssr/
+build/
+# ===============================
+.env
+.env.*
+!.env.example
+node_modules/

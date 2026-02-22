@@ -14,33 +14,10 @@ const app = express();
 // }));
 
 
-const allowedOrigins = [
-  "http://localhost:3000",       // Legacy React
-  "http://localhost:5173",       // Vite (Current Local)
-  "https://es-client.vercel.app" // Your Production Client
-];
-
 app.use(cors({
-  origin: function (origin, callback) {
-    // Allow requests with no origin (like Postman or mobile apps)
-    if (!origin) return callback(null, true);
-    
-    if (allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error("CORS policy violation: Origin not allowed"), false);
-    }
-  },
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization", "X-Requested-With", "Accept"],
-  credentials: true,
-  preflightContinue: false,
-  optionsSuccessStatus: 204
+  origin: "https://es-client.vercel.app",
+  credentials: true
 }));
-
-// Manually handle OPTIONS requests (Crucial for Vercel/Serverless)
-app.options('*', cors());
-
 
 app.use(express.json());
 

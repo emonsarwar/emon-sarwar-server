@@ -4,20 +4,6 @@ const cors = require('cors');
 require('dotenv').config();
 
 const app = express();
-// app.use(cors({
-//   origin: [
-//     "http://localhost:3000",
-//     "http://localhost:5173",
-//     "https://emon-sarwar-client.vercel.app"
-//   ],
-//   credentials: true,
-// }));
-
-
-// app.use(cors({
-//   origin: "https://es-client.vercel.app",
-//   credentials: true
-// }));
 
 app.use(cors({ origin: process.env.ALLOWED_ORIGIN || '*' }));
 

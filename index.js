@@ -14,10 +14,12 @@ const app = express();
 // }));
 
 
-app.use(cors({
-  origin: "https://es-client.vercel.app",
-  credentials: true
-}));
+// app.use(cors({
+//   origin: "https://es-client.vercel.app",
+//   credentials: true
+// }));
+
+app.use(cors({ origin: process.env.ALLOWED_ORIGIN || '*' }));
 
 app.use(express.json());
 
